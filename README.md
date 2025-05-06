@@ -2,12 +2,6 @@
 Fit Again with Fit-Game
 A gamified Fitness Experience
 
-<<<<<<< HEAD
-You can access the webapp through the link : https://fitgame.herokuapp.com/
-=======
-You can access the webapp through the link : http://192.168.1.8:3000/FIT-GAME/templates/index.ejs
->>>>>>> c4cd80116208ebe9ae10fb6b049e5e79e0f69243
-
 ![image](https://user-images.githubusercontent.com/75574159/141606917-f5a8caaa-9c9c-4b38-9bb0-b5485bc65d6b.png)
 
 
