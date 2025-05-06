@@ -1,0 +1,12 @@
+# Ignore virtual environment
+venv/
+backend/venv/
+
+# Ignore large files and compiled bytecode
+*.dll
+*.pyd
+
+# Ignore node_modules
+frontend/node_modules/
+
+

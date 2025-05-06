@@ -1,0 +1,1651 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Play exciting fitness games with Fit Game">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#FF6B6B">
+
+    <!--====== Title ======-->
+    <title>Fit Game - Play Fitness Games</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <!--====== Font Awesome ======-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="assets/css/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS with modern enhancements -->
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --dark-color: #292F36;
+            --light-color: #F7FFF7;
+            --accent-color: #FFE66D;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --game-card-bg: linear-gradient(145deg, #ffffff, #f0f0f0);
+            --game-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --game-card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e05555;
+        }
+
+        /* Navbar Styling */
+        .navbar-area {
+            background: linear-gradient(135deg, var(--dark-color), #1a1a1a);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            position: relative;
+            color: white !important;
+            font-weight: 500;
+            padding: 8px 15px !important;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .toggler-icon {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: white;
+            margin: 5px 0;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .toggler-icon:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .toggler-icon:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .toggler-icon:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Hero Section */
+        .games-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/gamesss.avif') center/cover no-repeat;
+            height: 60vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            opacity: 1;
+        }
+
+        .games-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(78, 205, 196, 0.3));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Game Cards Section */
+        .games-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title .title {
+            font-size: 42px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .section-title .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .section-title .text {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .game-card {
+            background: var(--game-card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--game-card-shadow);
+            transition: var(--transition);
+            margin-bottom: 30px;
+            height: 100%;
+            position: relative;
+            border: none;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--game-card-hover-shadow);
+        }
+
+        .game-card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .game-card:hover .game-card-img {
+            transform: scale(1.05);
+        }
+
+        .game-card-body {
+            padding: 25px;
+            position: relative;
+        }
+
+        .game-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .game-card-text {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .game-card-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+        }
+
+        .play-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .play-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+
+        .play-btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Game Categories */
+        .game-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 8px 20px;
+            margin: 0 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .category-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        /* Game Features */
+        .game-features {
+            background: linear-gradient(135deg, rgba(41, 47, 54, 0.03), rgba(41, 47, 54, 0.05));
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .feature-box:hover .feature-icon {
+            transform: rotateY(180deg);
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .feature-text {
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            /* background: url('assets/images/pattern.png') center/cover; */
+            position: relative;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 15px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: rgba(0, 0, 0, 0.05);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h5 {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 0;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--dark-color), #1a1a1a);
+            padding: 200px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+            animation: pulse 15s infinite linear;
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+
+
+        /* Footer */
+
+        .footer-area {
+            background: linear-gradient(135deg, var(--dark-color), #1a1a1a);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-widget {
+            
+            padding-top: 45px !important;
+            padding-bottom: 230px !important;
+        }
+
+        .footer-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .footer-title:hover::after {
+            width: 100%;
+        }
+
+        .footer-links,
+        .footer-contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li,
+        .footer-contact li {
+            margin-bottom: 10px;
+            color: #bbb;
+            font-size: 15px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 15px;
+            display: inline-block;
+        }
+
+        .footer-links a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 20px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .footer-social {
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .footer-social li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+            font-size: 18px;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-logo img {
+            max-width: 150px;
+            filter: invert(100%);
+        }
+
+        .footer-copyright {
+            background-color: var(--dark-color) !important;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-copyright .container,
+        .footer-copyright .row {
+            background-color: transparent;
+        }
+
+        .copyright-text {
+            color: #bbb;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        .copyright-text a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer-copyright{
+            padding-top: 0px !important;
+            padding-bottom: 100px !important;
+        }
+
+        .navbar-area{
+            padding-top: 1px !important;
+        }
+
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Game Stats */
+        .game-stats {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            z-index: 2;
+        }
+
+        .stat-item {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .stat-item i {
+            margin-right: 5px;
+            font-size: 10px;
+            color: var(--accent-color);
+        }
+
+        /* Rating Stars */
+        .rating {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .rating i {
+            color: var(--accent-color);
+            margin-right: 3px;
+            font-size: 14px;
+        }
+
+        /* Difficulty Indicator */
+        .difficulty {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .difficulty-label {
+            margin-right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .difficulty-level {
+            height: 5px;
+            border-radius: 5px;
+            background: #eee;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .difficulty-progress {
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        /* Game Modal */
+        .game-modal .modal-content {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .game-modal .modal-header {
+            border-bottom: none;
+            background: linear-gradient(135deg, var(--dark-color), #1a1a1a);
+            color: white;
+        }
+
+        .game-modal .modal-body {
+            padding: 0;
+        }
+
+        .game-modal .modal-footer {
+            border-top: none;
+            background: #f9f9f9;
+        }
+
+        .menu-bar {
+            display: none;
+        }
+
+        .navbar-area {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-collapse {
+            background: transparent !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .section-title .title {
+                font-size: 36px;
+            }
+
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+
+            .nav-link {
+                padding: 10px 0 !important;
+                margin: 5px 0;
+                display: block;
+            }
+
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            }
+
+            .navbar-area {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            }
+            
+        .footer-widget {
+            
+            padding-top: 45px !important;
+            padding-bottom: 370px !important;
+        }
+        .footer-copyright{
+            padding-bottom: 55px;
+        }
+        }
+
+        @media (max-width: 767px) {
+            .games-hero {
+                height: 50vh;
+                min-height: 400px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title .title {
+                font-size: 32px;
+            }
+
+            .game-card-img {
+                height: 180px;
+            }
+
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            }
+
+            .navbar-area {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 2rem;
+
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title .title {
+                font-size: 28px;
+            }
+
+            .play-btn {
+                padding: 8px 20px;
+            }
+
+            .category-btn {
+                padding: 5px 15px;
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            }
+
+            .navbar-area {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== NAVBAR PART START ======-->
+    <header class="header-area">
+        <div class="navbar-area sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-area">
+                            <a class="navbar-brand" href="/">
+                                <img src="/assets/images/logo.png" alt="Fit Game Logo">
+                            </a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarEight" aria-controls="navbarEight" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarEight">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="/">HOME</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="/#about">ABOUT</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link page-scroll active" href="/games">GAMES</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="/#team">TEAM</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="/#contact">CONTACT</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="navbar-btn d-none mt-15 d-lg-inline-block">
+                                <a class="menu-bar" href="#side-menu-right"><i class="lni-menu"></i></a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--====== NAVBAR PART ENDS ======-->
+
+    <!--====== HERO PART START ======-->
+    <section class="games-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">PLAY & GET FIT</h1>
+            <p class="hero-subtitle">Experience the future of fitness gaming with our interactive collection</p>
+            <a href="#games" class="play-btn">Explore Games <i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+    <!--====== HERO PART ENDS ======-->
+
+    <!--====== GAMES SECTION START ======-->
+    <section id="games" class="games-section">
+        <div class="container">
+            <div class="section-title">
+                <h3 class="title">Our Game Collection</h3>
+                <p class="text">Choose from our exciting selection of fitness games designed to make your workout fun
+                    and engaging</p>
+            </div>
+
+            <div class="game-categories">
+                <button class="category-btn active" data-filter="*">ALL GAMES</button>
+                <button class="category-btn" data-filter=".runner">ENDLESS RUNNER</button>
+                <button class="category-btn" data-filter=".exercise">EXERCISE</button>
+                <button class="category-btn" data-filter=".yoga">YOGA</button>
+                <button class="category-btn" data-filter=".adventure">ADVENTURE</button>
+            </div>
+
+            <div class="row">
+                <!-- Game 1 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 runner">
+                    <div class="game-card">
+                        <div class="game-stats">
+                            <span class="stat-item"><i class="fas fa-fire"></i> 1.2K Plays</span>
+                            <span class="stat-item"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <img src="assets/images/game1.png" alt="Endless Runner Game 1" class="game-card-img">
+                        <div class="game-card-body">
+                            <span class="game-card-badge">NEW</span>
+                            <h3 class="game-card-title">Endless Runner Adventure</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="difficulty">
+                                <span class="difficulty-label">Difficulty:</span>
+                                <div class="difficulty-level">
+                                    <div class="difficulty-progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <p class="game-card-text">Run, jump and dodge obstacles in this exciting endless runner game
+                                that tracks your real movements!</p>
+                            <form action="/play1" method="get">
+                                <button type="submit" class="play-btn" name="gameName" value="endless-runner-1">
+                                    Play Now <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 2 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 exercise">
+                    <div class="game-card">
+                        <div class="game-stats">
+                            <span class="stat-item"><i class="fas fa-fire"></i> 2.4K Plays</span>
+                            <span class="stat-item"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <img src="assets/images/game4.webp" alt="Endless Runner Game 2" class="game-card-img">
+                        <div class="game-card-body">
+                            <h3 class="game-card-title">Fitness Challenge</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="difficulty">
+                                <span class="difficulty-label">Difficulty:</span>
+                                <div class="difficulty-level">
+                                    <div class="difficulty-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <p class="game-card-text">Complete various fitness challenges and unlock achievements as you
+                                progress through levels.</p>
+                            <form action="/play2" method="get">
+                                <button type="submit" class="play-btn" name="gameName" value="endless-runner-2">
+                                    Play Now <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 3 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 yoga">
+                    <div class="game-card">
+                        <div class="game-stats">
+                            <span class="stat-item"><i class="fas fa-fire"></i> 890 Plays</span>
+                            <span class="stat-item"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <img src="assets/images/game5.jpg" alt="Endless Runner Game 3" class="game-card-img">
+                        <div class="game-card-body">
+                            <span class="game-card-badge">POPULAR</span>
+                            <h3 class="game-card-title">Yoga Master</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="difficulty">
+                                <span class="difficulty-label">Difficulty:</span>
+                                <div class="difficulty-level">
+                                    <div class="difficulty-progress" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <p class="game-card-text">Learn and master yoga poses with our interactive game that guides
+                                you through each movement.</p>
+                            <form action="/play3" method="get">
+                                <button type="submit" class="play-btn" name="gameName" value="endless-runner-3">
+                                    Play Now <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 4 (Example of a new game) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 adventure">
+                    <div class="game-card">
+                        <div class="game-stats">
+                            <span class="stat-item"><i class="fas fa-fire"></i> 3.1K Plays</span>
+                            <span class="stat-item"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <img src="assets/images/game6.jpg" alt="Mountain Climber" class="game-card-img">
+                        <div class="game-card-body">
+                            <span class="game-card-badge">BESTSELLER</span>
+                            <h3 class="game-card-title">Mountain Climber</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="difficulty">
+                                <span class="difficulty-label">Difficulty:</span>
+                                <div class="difficulty-level">
+                                    <div class="difficulty-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <p class="game-card-text">Climb breathtaking mountains while performing real exercises to
+                                progress through the game.</p>
+                            <button class="play-btn" data-toggle="modal" data-target="#gameModal4">
+                                Coming Soon <i class="fas fa-hourglass-half"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 5 (Example of a new game) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 exercise">
+                    <div class="game-card">
+                        <div class="game-stats">
+                            <span class="stat-item"><i class="fas fa-fire"></i> 1.5K Plays</span>
+                            <span class="stat-item"><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <img src="assets/images/game7.jpg" alt="Boxing Champion" class="game-card-img">
+                        <div class="game-card-body">
+                            <h3 class="game-card-title">Boxing Champion</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="difficulty">
+                                <span class="difficulty-label">Difficulty:</span>
+                                <div class="difficulty-level">
+                                    <div class="difficulty-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <p class="game-card-text">Train like a champion boxer with this high-intensity workout game
+                                that tracks your punches.</p>
+                            <button class="play-btn" data-toggle="modal" data-target="#gameModal5">
+                                Coming Soon <i class="fas fa-hourglass-half"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 6 (Example of a new game) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 yoga">
+                    <div class="game-card">
+                        <div class="game-stats">
+                            <span class="stat-item"><i class="fas fa-fire"></i> 980 Plays</span>
+                            <span class="stat-item"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <img src="assets/images/game8.jpeg" alt="Zen Garden" class="game-card-img">
+                        <div class="game-card-body">
+                            <h3 class="game-card-title">Zen Garden</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="difficulty">
+                                <span class="difficulty-label">Difficulty:</span>
+                                <div class="difficulty-level">
+                                    <div class="difficulty-progress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <p class="game-card-text">Relax and unwind with gentle yoga flows in this peaceful virtual
+                                garden environment.</p>
+                            <button class="play-btn" data-toggle="modal" data-target="#gameModal6">
+                                Coming Soon <i class="fas fa-hourglass-half"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== GAMES SECTION ENDS ======-->
+
+    <!--====== FEATURES SECTION START ======-->
+    <section class="game-features">
+        <div class="container">
+            <div class="section-title">
+                <h3 class="title">Why Our Games Stand Out</h3>
+                <p class="text">Discover what makes our fitness gaming experience unique and effective</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4 class="feature-title">Real Health Benefits</h4>
+                        <p class="feature-text">Our games are designed by fitness experts to provide actual workout
+                            benefits while keeping you engaged.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h4 class="feature-title">Motion Tracking</h4>
+                        <p class="feature-text">Advanced technology tracks your movements to ensure proper form and
+                            maximize your workout.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4 class="feature-title">Achievements</h4>
+                        <p class="feature-text">Earn badges and rewards as you progress, keeping you motivated to reach
+                            your fitness goals.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="feature-title">Progress Tracking</h4>
+                        <p class="feature-text">Monitor your improvements with detailed statistics and personalized
+                            insights.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="feature-title">Multiplayer Mode</h4>
+                        <p class="feature-text">Challenge friends or join the community in exciting multiplayer fitness
+                            challenges.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h4 class="feature-title">All Fitness Levels</h4>
+                        <p class="feature-text">From beginners to athletes, our games adapt to your current fitness
+                            level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== FEATURES SECTION ENDS ======-->
+
+    <!--====== TESTIMONIALS SECTION START ======-->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h3 class="title">What Players Say</h3>
+                <p class="text" style="color: black; font-weight: 900;">Hear from our community of fitness gamers</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">I've never enjoyed working out until I tried these games. Now I look
+                            forward to my daily fitness gaming session!</p>
+                        <div class="testimonial-author">
+                            <!-- <img src="assets/images/testimonial1.jpg" alt="Sarah J." class="author-img"> -->
+                            <div class="author-info">
+                                <h5>Sarah J.</h5>
+                                <p>Fitness Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">As a physical therapist, I recommend these games to my patients.
+                            They make rehabilitation exercises fun and engaging.</p>
+                        <div class="testimonial-author">
+                            <!-- <img src="assets/images/testimonial2.jpg" alt="Dr. Michael T." class="author-img"> -->
+                            <div class="author-info">
+                                <h5>Dr. Michael T.</h5>
+                                <p>Physical Therapist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">The perfect solution for someone who hates traditional workouts but
+                            wants to stay active. I've lost 15lbs in 3 months!</p>
+                        <div class="testimonial-author">
+                            <!-- <img src="assets/images/testimonial3.jpg" alt="Alex R." class="author-img"> -->
+                            <div class="author-info">
+                                <h5>Alex R.</h5>
+                                <p>Gamer & Fitness Newbie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== TESTIMONIALS SECTION ENDS ======-->
+
+    <!--====== NEWSLETTER SECTION START ======-->
+    <!-- <section class="newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h3 class="title">Stay Updated</h3>
+                    <p class="text">Subscribe to get notified about new game releases and special events</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                        <button type="submit" class="newsletter-btn">Subscribe <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--====== NEWSLETTER SECTION ENDS ======-->
+
+    <!--====== FOOTER PART START ======-->
+    <footer id="footer" class="footer-area">
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="footer-about">
+                            <a href="/" class="footer-logo">
+                                <img src="/assets/images/logo-alt.png" alt="Fit Game Logo">
+                            </a>
+                            <p>Making fitness fun and accessible through innovative gaming technology. Our mission is to
+                                help people stay active while having a great time.</p>
+                            <ul class="footer-social">
+                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni-instagram-original"></i></a></li>
+                                <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="footer-contact">
+                            <h4 class="footer-title">Contact Us</h4>
+                            <ul>
+                                <li><i class="lni-map-marker"></i> New Delhi, India</li>
+                                <li><i class="lni-phone"></i> +91 9990538802</li>
+                                <li><i class="lni-envelope"></i> mayankixa17@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="copyright text-center text-lg-left mt-10">
+                            <p class="text">Made with <i class="lni-heart-filled"
+                                    style="color: var(rgb(193, 13, 43));"></i> by
+                                <a style="color: var(--accent-color)" rel="nofollow" href="/#team">Constellation</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-logo text-center mt-10">
+                            <a href="/">
+                                <img src="/assets/images/WhatsApp_Image_2024-10-26_at_1.42.03_PM-removebg-preview.png"
+                                    alt="Logo" style="max-width: 150px; filter: invert(100%);">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <ul class="social text-center text-lg-right mt-10">
+                            <li><a href="https://www.facebook.com/mayank.mittal.1069020/"><i class="lni-facebook-filled"></i></a></li>
+                            <li><a href="https://x.com/MayankMittal06"><i class="lni-twitter-original"></i></a></li>
+                            <li><a href="https://www.instagram.com/mayankmittal.1306/"><i class="lni-instagram-original"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/mayankmittal1311/"><i class="lni-linkedin-original"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+        <!--====== FOOTER PART ENDS ======-->
+
+        <!--====== BACK TO TOP PART START ======-->
+        <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+        <!--====== BACK TO TOP PART ENDS ======-->
+
+        <!--====== GAME MODALS ======-->
+        <!-- Modal for Game 4 -->
+        <div class="modal fade game-modal" id="gameModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mountain Climber</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/game6.jpg" alt="Mountain Climber" class="img-fluid">
+                    </div>
+                    <div class="modal-footer">
+                        <p>This exciting new game is coming soon! Sign up for our newsletter to be notified when it
+                            launches.</p>
+                        <button type="button" class="play-btn" data-dismiss="modal">Got It!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Game 5 -->
+        <div class="modal fade game-modal" id="gameModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Boxing Champion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/game7.jpg" alt="Boxing Champion" class="img-fluid">
+                    </div>
+                    <div class="modal-footer">
+                        <p>We're putting the final touches on this high-intensity boxing game. Stay tuned for the
+                            release!
+                        </p>
+                        <button type="button" class="play-btn" data-dismiss="modal">Got It!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Game 6 -->
+        <div class="modal fade game-modal" id="gameModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Zen Garden</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/game8.jpeg" alt="Zen Garden" class="img-fluid"
+                            style="width:max-content;">
+                    </div>
+                    <div class="modal-footer">
+                        <p>Our relaxing yoga game is in development. Subscribe to be the first to know when it's
+                            available.
+                        </p>
+                        <button type="button" class="play-btn" data-dismiss="modal">Got It!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--====== SCRIPTS ======-->
+        <!--====== jquery js ======-->
+        <script src="assets/js/modernizr-3.6.0.min.js"></script>
+        <script src="assets/js/jquery-1.12.4.min.js"></script>
+
+        <!--====== Bootstrap js ======-->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+
+        <!--====== Slick js ======-->
+        <script src="assets/js/slick.min.js"></script>
+
+        <!--====== Isotope js ======-->
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+
+        <!--====== Images Loaded js ======-->
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+
+        <!--====== Magnific Popup js ======-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+        <!--====== Scrolling js ======-->
+        <script src="assets/js/scrolling-nav.js"></script>
+        <script src="assets/js/jquery.easing.min.js"></script>
+
+        <!--====== wow js ======-->
+        <script src="assets/js/wow.min.js"></script>
+
+        <!--====== Main js ======-->
+        <script src="assets/js/main.js"></script>
+
+        <!-- Custom Game Page Scripts -->
+        <script>
+            $(document).ready(function () {
+                // Initialize Isotope for game filtering
+                var $grid = $('.row').isotope({
+                    itemSelector: '.col-lg-4',
+                    layoutMode: 'fitRows'
+                });
+
+                // Filter items on button click
+                $('.category-btn').on('click', function () {
+                    $('.category-btn').removeClass('active');
+                    $(this).addClass('active');
+
+                    var filterValue = $(this).attr('data-filter');
+                    $grid.isotope({ filter: filterValue });
+                });
+
+                // Smooth scrolling for anchor links
+                $('a[href*="#"]').on('click', function (e) {
+                    e.preventDefault();
+
+                    $('html, body').animate(
+                        {
+                            scrollTop: $($(this).attr('href')).offset().top - 80,
+                        },
+                        500,
+                        'linear'
+                    );
+                });
+
+                // Back to top button
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 300) {
+                        $('.back-to-top').addClass('active');
+                    } else {
+                        $('.back-to-top').removeClass('active');
+                    }
+                });
+
+                // Game card hover effect enhancement
+                $('.game-card').hover(
+                    function () {
+                        $(this).find('.game-card-img').css('transform', 'scale(1.05)');
+                    },
+                    function () {
+                        $(this).find('.game-card-img').css('transform', 'scale(1)');
+                    }
+                );
+
+                // Animate elements when they come into view
+                function animateOnScroll() {
+                    $('.feature-box, .testimonial-card').each(function () {
+                        var position = $(this).offset().top;
+                        var scroll = $(window).scrollTop();
+                        var windowHeight = $(window).height();
+
+                        if (scroll + windowHeight > position) {
+                            $(this).addClass('animated fadeInUp');
+                        }
+                    });
+                }
+
+                $(window).scroll(function () {
+                    animateOnScroll();
+                });
+
+                // Initialize animations on page load
+                animateOnScroll();
+            });
+        </script>
+</body>
+
+</html>

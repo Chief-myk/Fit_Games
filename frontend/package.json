@@ -1,0 +1,25 @@
+{
+  "name": "fit-game",
+  "version": "1.0.0",
+  "description": "Gamified Fitness Platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": ["fitness", "game", "exercise"],
+  "author": "Constellation Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

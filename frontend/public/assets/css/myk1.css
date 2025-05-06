@@ -1,0 +1,43 @@
+/* .part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.poses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -280px;
+}
+
+.pose1 {
+    margin: 0;
+    display: grid;
+    place-content: center;
+    background: pink;
+    border: 2px solid black;
+}
+.pose2 {
+    margin: 0;
+    display: grid;
+    place-content: center;
+    background: pink;
+    border: 2px solid black;
+}
+.pose3 {
+    margin: 0;
+    display: grid;
+    place-content: center;
+    background: pink;
+    border: 2px solid black;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons button{
+    margin: 10px 30px 0 30px;
+}

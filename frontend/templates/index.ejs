@@ -1,0 +1,1307 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Fit Game - A gamified fitness platform for kids and adults to stay healthy while having fun">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fit Game - Gamified Fitness Experience</title>
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    
+    <!-- Combined CSS with critical styles first -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/LineIcons.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/default.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Custom CSS with modern enhancements -->
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --dark-color: #292F36;
+            --light-color: #F7FFF7;
+            --accent-color: #FFE66D;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--dark-color);
+        }
+        
+        /* Custom enhancements */
+        .carousel-item {
+            transition: transform 1.2s ease-in-out;
+            height: 100vh;
+            min-height: 600px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .carousel-caption {
+            bottom: 30%;
+            z-index: 10;
+        }
+        
+        .carousel-title {
+            font-size: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s both;
+        }
+        
+        .navbar-brand img {
+            transition: transform 0.3s;
+            height: 50px;
+        }
+        
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+        
+        .single-about {
+            transition: all 0.4s ease;
+            border-radius: 12px;
+            padding: 25px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .single-about:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, #f5f7fa, #ffffff);
+        }
+        
+        .team-member {
+            transition: all 0.4s ease;
+            perspective: 1000px;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member:hover .team-img {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .team-img {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            object-fit: cover;
+            border-radius: 15px;
+            width: 100%;
+            height: 300px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-info h5 {
+            font-weight: 700;
+            margin-top: 15px;
+            color: var(--dark-color);
+        }
+        
+        .team-info p {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            color: white;
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+        
+        .cta-button:hover::after {
+            opacity: 1;
+        }
+        
+        .navbar {
+            transition: all 0.4s ease;
+            padding: 15px 0;
+            
+        }
+
+        .navbar-area{
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        }
+        
+        .sticky {
+            /* background: rgba(0,0,0,0.98) !important; */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 10px 0;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 8px 15px !important;
+            margin: 0 5px;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .social li a {
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .social li a:hover {
+            transform: translateY(-5px);
+            background: var(--primary-color);
+        }
+        
+        .section-title {
+            margin-bottom: 60px;
+        }
+        
+        .section-title .title {
+            font-size: 42px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .section-title .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        .about-icon img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .about-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* Feature Counter */
+        .counter-section {
+            background: linear-gradient(135deg, var(--dark-color), #1a1a1a);
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .counter-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .counter-box:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .counter {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Testimonials */
+        .testimonial-section {
+            background: #f9f9f9;
+            padding: 100px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 15px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: rgba(0,0,0,0.05);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h5 {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 0;
+        }
+        
+        /* Footer */
+        .footer-area {
+            background: var(--dark-color);
+            color: white;
+            position: relative;
+        }
+        
+        .footer-widget {
+            padding: 80px 0 40px;
+        }
+        
+        .footer-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-title:hover::after {
+            width: 100%;
+        }
+        
+        .footer-logo img {
+            max-width: 200px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-copyright {
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .slider-area{
+            padding-top: 80px !important; 
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Game Features Section */
+        .features-section {
+            padding: 100px 0;
+            /* background: url('/assets/images/pattern.png') center/cover; */
+            position: relative;
+        }
+        
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.9);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card:hover::after {
+            opacity: 1;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .menu-bar{
+            display: none;
+        }
+        
+        /* Better responsiveness */
+        @media (max-width: 1199px) {
+            .carousel-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .carousel-title {
+                font-size: 3rem;
+            }
+            
+            .section-title .title {
+                font-size: 36px;
+            }
+            
+            .navbar-collapse {
+                background: rgba(0,0,0,0.95);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+            
+            .nav-link {
+                padding: 10px 0 !important;
+                margin: 5px 0;
+            }
+            .navbar-collapse{
+               
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        
+            }
+            
+        }
+        
+        @media (max-width: 767px) {
+            .carousel-item {
+                height: 80vh;
+                min-height: 500px;
+            }
+            
+            .carousel-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title .title {
+                font-size: 32px;
+            }
+            
+            .team-img {
+                height: 250px;
+            }
+            
+            .counter {
+                font-size: 40px;
+            }
+            .navbar-collapse{
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+
+        }
+    }
+        
+        @media (max-width: 575px) {
+            .carousel-title {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+            }
+            
+            .section-title .title {
+                font-size: 28px;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            .navbar-collapse{
+                background-color: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important; 
+            }
+            #navbareight{
+                background-color: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important; 
+            
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader with animation -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navbar Section -->
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="#">
+                                <img src="/assets/images/logo.png" alt="Fit Game Logo">
+                            </a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarEight" aria-controls="navbarEight" aria-expanded="false" aria-label="Toggle navigation" style="  background-color: linear-gradient(135deg, var(#FF6B6B), var(#4ECDE4))">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarEight">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link page-scroll" href="#home">HOME</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#about">ABOUT</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#team">TEAM</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="navbar-btn d-none mt-15 d-lg-inline-block">
+                                <a class="menu-bar" href="#side-menu-right"><i class="lni-menu"></i></a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Carousel -->
+        <div id="home" class="slider-area">
+            <div class="bd-example">
+                <div id="carouselOne" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselOne" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselOne" data-slide-to="1"></li>
+                        <li data-target="#carouselOne" data-slide-to="2"></li>
+                        <li data-target="#carouselOne" data-slide-to="3"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item bg_cover active" style="background-image: url(/assets/images/play1.jpg);">
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-8 col-lg-9 col-sm-10 text-center">
+                                            <h2 class="carousel-title">FITNESS MEETS FUN</h2>
+                                            <p class="lead mb-4">Transform your workouts into exciting gaming adventures</p>
+                                            <a class="cta-button" href="/yoga">GET STARTED</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item bg_cover" style="background-image: url(/assets/images/play3.jpg);">
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-8 col-lg-9 col-sm-10 text-center">
+                                            <h2 class="carousel-title">GAMIFIED FITNESS EXPERIENCE</h2>
+                                            <p class="lead mb-4">Earn rewards while getting fit with our innovative platform</p>
+                                            <a class="cta-button" href="/yoga">EXPLORE NOW</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item bg_cover" style="background-image: url(/assets/images/Untitled\ design.png);">
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-8 col-lg-9 col-sm-10 text-center">
+                                            <h2 class="carousel-title">PLAY. MOVE. ACHIEVE.</h2>
+                                            <p class="lead mb-4">Your favorite games with real fitness benefits</p>
+                                            <a class="cta-button" href="/yoga">JOIN TODAY</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item bg_cover" style="background-image: url(/assets/images/play\ edit.png);">
+                            <div class="carousel-caption">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-8 col-lg-9 col-sm-10 text-center">
+                                            <h2 class="carousel-title">FIT FOR LIFE</h2>
+                                            <p class="lead mb-4">Making fitness enjoyable for kids and adults alike</p>
+                                            <a class="cta-button" href="/yoga">START YOUR JOURNEY</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselOne" role="button" data-slide="prev">
+                        <i class="lni-arrow-left-circle"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control-next" href="#carouselOne" role="button" data-slide="next">
+                        <i class="lni-arrow-right-circle"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Part -->
+    <div class="sidebar-right">
+        <div class="sidebar-close">
+            <a class="close" href="#close"><i class="lni-close"></i></a>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-logo text-center">
+                <a href="#"><img src="/assets/images/logo-alt.png" alt="Fit Game Logo"></a>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#features">FEATURES</a></li>
+                    <li><a href="#team">MEET THE TEAM</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-social d-flex align-items-center justify-content-center">
+                <span>FOLLOW US</span>
+                <ul>
+                    <li><a href="https://x.com/khushi__1143"><i class="lni-twitter-original"></i></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100056604981630&mibextid=ZbWKwL"><i class="lni-facebook-filled"></i></a></li>
+                    <li><a href="#"><i class="lni-instagram-original"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-right"></div>
+
+    <!-- About Section -->
+    <section id="about" class="about-area pt-120 pb-90">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="about-image text-center wow fadeInUp" data-wow-duration="1.5s" data-wow-offset="100">
+                        <img src="/assets/images/about.png" alt="Fit Game services" class="floating" style="height: 180px;">
+                    </div>
+                    <div class="section-title text-center mt-30 pb-40">
+                        <h4 class="title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">GAMIFIED FITNESS PLATFORM</h4>
+                        <p class="text wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">We combine the excitement of gaming with the benefits of physical exercise to create a unique fitness experience for all ages.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="about-icon">
+                            <img src="/assets/images/icon-1.png" alt="Icon">
+                        </div>
+                        <div class="about-content media-body">
+                            <h4 class="about-title">Tackles New-Age Problems</h4>
+                            <p class="text">Kids get a complete Gaming Experience through this platform. Also helps to tackle the growing problems of laziness and obesity by making fitness fun and engaging.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.4s">
+                        <div class="about-icon">
+                            <img src="/assets/images/icon-2.png" alt="Icon">
+                        </div>
+                        <div class="about-content media-body">
+                            <h4 class="about-title">Kids Friendly Interface</h4>
+                            <p class="text">Easy to use interface which is Child Friendly and doesn't require extra effort to play engaging games. Designed with intuitive controls and colorful visuals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.6s">
+                        <div class="about-icon">
+                            <img src="/assets/images/icon-3.png" alt="Icon">
+                        </div>
+                        <div class="about-content media-body">
+                            <h4 class="about-title">Motivating through Rewards</h4>
+                            <p class="text">Have multiple rewards like Points, Badges, and leaderboards to showcase Achievements with multiple challenges along the way. Stay motivated with our achievement system.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-about d-sm-flex mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.8s">
+                        <div class="about-icon">
+                            <img src="/assets/images/icon-4.png" alt="Icon">
+                        </div>
+                        <div class="about-content media-body">
+                            <h4 class="about-title">Real-time Interaction</h4>
+                            <p class="text">There is no other web application that analyses live video and transforms the physical experience of exercising and working out into entertaining activities for children.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Counter -->
+    <section class="counter-section pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="counter-box text-center wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                        <div class="counter">
+                            <span class="count">5000</span>+
+                        </div>
+                        <p>Active Users</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="counter-box text-center wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                        <div class="counter">
+                            <span class="count">50</span>+
+                        </div>
+                        <p>Fitness Challenges</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="counter-box text-center wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
+                        <div class="counter">
+                            <span class="count">100</span>+
+                        </div>
+                        <p>Game Levels</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="counter-box text-center wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
+                        <div class="counter">
+                            <span class="count">24</span>/7
+                        </div>
+                        <p>Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section pt-120 pb-90">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="section-title text-center mb-70">
+                        <h3 class="title">Key Features</h3>
+                        <p class="text">Discover what makes our gamified fitness platform unique</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h4>Interactive Games</h4>
+                        <p>Engaging games that require physical movement to progress, making exercise feel like playtime.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Reward System</h4>
+                        <p>Earn points, badges, and unlock achievements as you complete fitness challenges.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Progress Tracking</h4>
+                        <p>Monitor your fitness journey with detailed analytics and performance metrics.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Multiplayer Mode</h4>
+                        <p>Compete with friends or family in real-time fitness challenges and games.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h4>Kid-Friendly</h4>
+                        <p>Specially designed interface that's easy for children to navigate and enjoy.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h4>Real-Time Motion</h4>
+                        <p>Advanced technology that translates your physical movements into game actions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="section-title text-center mb-70">
+                        <h3 class="title">What Our Users Say</h3>
+                        <p class="text">Hear from people who transformed their fitness journey with us</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="testimonial-card wow fadeInLeft" data-wow-duration="1.5s">
+                        <p class="testimonial-text">Fit Game has completely changed how my kids view exercise. They beg to "play" their fitness games every day and don't even realize they're working out!</p>
+                        <div class="testimonial-author">
+                            <!-- <img src="/assets/images/testimonial1.jpg" alt="Sarah Johnson" class="author-img"> -->
+                            <div class="author-info">
+                                <h5>Sarah Johnson</h5>
+                                <p>Parent of two</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-card wow fadeInRight" data-wow-duration="1.5s">
+                        <p class="testimonial-text">As a physical education teacher, I've been searching for ways to make fitness fun for my students. Fit Game has been a game-changer in my classes!</p>
+                        <div class="testimonial-author">
+                            <!-- <img src="/assets/images/testimonial2.jpg" alt="Michael Chen" class="author-img"> -->
+                            <div class="author-info">
+                                <h5>Michael Chen</h5>
+                                <p>PE Teacher</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet The Team Section -->
+    <section id="team" class="pricing-area pt-120 pb-90">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="section-title text-center mb-70">
+                        <h3 class="title">Meet The Team</h3>
+                        <p class="text">The brilliant minds behind Fit Game</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center team-section">
+                <div class="col-lg-3 col-md-6 col-sm-9">
+                    <div class="pricing-style-one mt-40 wow fadeIn team-member" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                        <div class="pricing-icon text-center">
+                            <img src="/assets/images/WhatsApp Image 2024-10-22 at 6.58.47 PM.jpeg" alt="Siddhi Sharma" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="sub-title">Siddhi Sharma</h5>
+                            <p>Ui/Ux Designer</p>
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/in/siddhi-sharma-467130341/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="lni-linkedin-original"></i></a>
+                                <a href="https://x.com/SiddhiSharma06?t=zlQJF-wfM7TZCGoa5hGRlg&s=08"><i class="lni-twitter-original"></i></a>
+                                <a href="https://github.com/Chief-siddhi"><i class="lni-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-9">
+                    <div class="pricing-style-one mt-40 wow fadeIn team-member" data-wow-duration="1.5s" data-wow-delay="1.1s">
+                        <div class="pricing-icon text-center">
+                            <img src="/assets/images/WhatsApp Image 2024-08-24 at 1.22.15 PM.jpeg" alt="Mayank Mittal" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="sub-title">Mayank Mittal</h5>
+                            <p>Founder and Developer</p>
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/in/mayankmittal1311/"><i class="lni-linkedin-original"></i></a>
+                                <a href="https://x.com/MayankMittal06"><i class="lni-twitter-original"></i></a>
+                                <a href="https://www.instagram.com/mayankmittal.1306/?hl=en"><i class="lni-instagram-original"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-9">
+                    <div class="pricing-style-one mt-40 wow fadeIn team-member" data-wow-duration="1.5s" data-wow-delay="0.5s">
+                        <div class="pricing-icon text-center">
+                            <img src="/assets/images/WhatsApp Image 2024-10-24 at 10.44.38 PM.jpeg" alt="Khushi Bhardwaj" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="sub-title">Khushi Bhardwaj</h5>
+                            <p>Co-Founder & Designer</p>
+                            <div class="team-social">
+                                <a href="#"><i class="lni-linkedin-original"></i></a>
+                                <a href="https://x.com/khushi__1143"><i class="lni-twitter-original"></i></a>
+                                <a href="#"><i class="lni-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-9">
+                    <div class="pricing-style-one mt-40 wow fadeIn team-member" data-wow-duration="1.5s" data-wow-delay="0.8s">
+                        <div class="pricing-icon text-center">
+                            <img src="/assets/images/WhatsApp Image 2024-10-24 at 10.47.21 PM.jpeg" alt="Bhavik Anand" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="sub-title">Bhavik Anand</h5>
+                            <p>Marketing and Growth</p>
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/in/bhavik-anand-3a032633a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="lni-linkedin-original"></i></a>
+                                <a href="https://www.instagram.com/bhavik_1502/?igsh=ZzdobWlveGhpemJr&utm_source=qr#"><i class="lni-instagram-original"></i></a>
+                                <a href="#"><i class="lni-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section pt-120 pb-120" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10 text-center">
+                    <h2 class="text-white mb-4">Ready to Transform Your Fitness Journey?</h2>
+                    <p class="text-white mb-5">Join thousands of users who are making fitness fun and rewarding with Fit Game.</p>
+                    <a href="/yoga" class="cta-button" style="background: white; color: var(--primary-color);">START YOUR FREE TRIAL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-area pt-120 pb-90">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="section-title text-center mb-70">
+                        <h3 class="title">Let's talk about the project</h3>
+                        <p class="text">
+                            Have questions or want to collaborate? Get in touch with our team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info wow fadeInLeft" data-wow-duration="1.5s">
+                        <h4 class="mb-4">Our Vision</h4>
+                        <p>We have planned to create a gamified fitness platform in order to help the user enjoy games and maintain good health at the same time. Our project idea is to provide a fitness experience that is gamified.</p>
+                        <p>We will mainly implement our project in python using machine learning. The game would require users to run and jump as well as do physical exercises in real life in order for their avatar in the game to imitate the motion and move on the screen.</p>
+                        <div class="contact-method mt-5">
+                            <div class="method-item d-flex mb-4">
+                                <div class="icon">
+                                    <i class="lni-envelope"></i>
+                                </div>
+                                <div class="text">
+                                    <h5>Email Us</h5>
+                                    <p>mayankixa17@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="method-item d-flex">
+                                <div class="icon">
+                                    <i class="lni-phone"></i>
+                                </div>
+                                <div class="text">
+                                    <h5>Call Us</h5>
+                                    <p>+91 9990538802</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form wow fadeInRight" data-wow-duration="1.5s">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-button btn-block">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer-area">
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row justify-content-center" style="align-items:center">
+                    <span><div><a href="#home" class="footer-title page-scroll">Home</a></div></span>
+                    <span><div><a href="#about" class="footer-title page-scroll">About</a></div></span>
+                    <span><div><a href="#features" class="footer-title page-scroll">Features</a></div></span>
+                    <span><div><a href="#team" class="footer-title page-scroll">Team</a></div></span>
+                    <span><div><a href="#contact" class="footer-title page-scroll">Contact</a></div></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="copyright text-center text-lg-left mt-10">
+                            <p class="text">Made with <i class="lni-heart-filled" style="color: var(--primary-color);"></i> by <a style="color: var(--accent-color)" rel="nofollow" href="#team">Constellation</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="footer-logo text-center mt-10">
+                            <a href="/">
+                                <img src="/assets/images/WhatsApp_Image_2024-10-26_at_1.42.03_PM-removebg-preview.png" alt="Logo" style="max-width: 150px; filter: invert(100%);">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <ul class="social text-center text-lg-right mt-10">
+                            <li><a href="https://www.facebook.com/mayank.mittal.1069020/"><i class="lni-facebook-filled"></i></a></li>
+                            <li><a href="https://x.com/MayankMittal06"><i class="lni-twitter-original"></i></a></li>
+                            <li><a href="https://www.instagram.com/mayankmittal.1306/"><i class="lni-instagram-original"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/mayankmittal1311/"><i class="lni-linkedin-original"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="/assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/js/jquery-1.12.4.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/scrolling-nav.js"></script>
+    <script src="/assets/js/jquery.easing.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="//code.tidio.co/rsrueaojznsi2udwoxcjhdqeskxxumi1.js" async></script>
+    
+    <!-- Additional interactive elements -->
+    <script>
+    $(document).ready(function() {
+        // Sticky navbar
+        $(window).scroll(function() {
+            if($(this).scrollTop() > 100) {
+                $('.navbar-area').addClass('sticky');
+            } else {
+                $('.navbar-area').removeClass('sticky');
+            }
+            
+            // Back to top button
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+        
+        // Smooth hover effects on feature boxes
+        $('.single-about').hover(function() {
+            $(this).find('.about-icon img').css('transform', 'scale(1.1)');
+        }, function() {
+            $(this).find('.about-icon img').css('transform', 'scale(1)');
+        });
+        
+        // Auto slide carousel with pause on hover
+        $('#carouselOne').carousel({
+            interval: 5000,
+            pause: "hover"
+        });
+        
+        // Animation for CTA buttons
+        $('.cta-button').hover(function() {
+            $(this).css('color', '#FFAD00');
+        }, function() {
+            $(this).css('color', 'white');
+        });
+        
+        // Interactive team member cards
+        $('.team-member').hover(function() {
+            $(this).find('.team-img').css('transform', 'scale(1.05)');
+            $(this).find('.team-social').css('opacity', '1');
+        }, function() {
+            $(this).find('.team-img').css('transform', 'scale(1)');
+            $(this).find('.team-social').css('opacity', '0');
+        });
+        
+        // Back to top button
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, '300');
+        });
+        
+        // Counter animation
+        $('.count').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+        
+        // Form submission
+        $('#contactForm').submit(function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Initialize WOW.js for animations
+        new WOW().init();
+        
+        // Loading dots animation
+        // var dots = window.setInterval(function() {
+        //     var wait = document.querySelector(".loader-dots");
+        //     if (wait.innerHTML.length > 2) {
+        //         wait.innerHTML = "";
+        //     } else {
+        //         wait.innerHTML += ".";
+        //     }
+        // }, 500);
+    });
+    </script>
+</body>
+</html>

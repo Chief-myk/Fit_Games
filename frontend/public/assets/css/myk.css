@@ -1,0 +1,23 @@
+@media (min-width: 992px) {
+    .col-lg-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 0%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-xl-6 {
+        -ms-flex: 0 0 50%;
+        flex: 10 0 50%;
+        max-width: 100%;
+    }
+}
+
+
+about-area .section-title .title {
+    font-size: 43px;
+    font-weight: 600;
+    line-height: 55px;
+    color: #121212;
+}
