@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-=======
-# Healthfit
-
-INSTRUCTIONS TO PROCEED WITH THE GAME......
-
-How to Play healthfit: Step-by-Step Guide
-
-PLEASE CHANGE YOUR IP ADDRESS IN THE CODE, TO ENSURE THAT THE CODE RUNS SMOOTHLY 
-Step 1: Open the Game File
-
-Start by locating and opening the file INDEX.ejs on your device.
-Step 2: Get Started
-
-Click on the GET STARTED button to initiate the setup process.
-Step 3: Run the Calibration Code
-
-Execute the file CODE1.py to calibrate the system. This setup ensures your movements are accurately tracked for the game.
- step 4: Complete the Required Poses
-
-Perform all three mandatory poses to proceed to the main game screen. These poses are essential for the system to recognize and synchronize your movements. Progressively, the page will load automatically.
-step 5: Select Your Game
-
-Choose one of the three games available and click on the PLAY GAME button for a smoother process.
-step 6: Start the Game
-
-Click on START GAME to open the scratch file and enter the gameplay phase.
-step 7: Execute the Game Model
-
-Run the GAME_MODEL.py file to activate the game’s core mechanics and bring your avatar to life.
-Enjoy the Experience!
-
-step 8: TA-DAA!!! Your game is now live. Immerse yourself in the fitness adventure and enjoy the fun!
-
->>>>>>> c4cd80116208ebe9ae10fb6b049e5e79e0f69243
-
 # FIT-GAME
 Fit Again with Fit-Game
 A gamified Fitness Experience
